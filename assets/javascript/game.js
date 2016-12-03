@@ -1,28 +1,34 @@
 var wins = 0;
 var losses = 0;
+var counter = 0;
+var imageCrystal1;
+var imageCrystal2;
+var imageCrystal3;
+var imageCrystal4;
+var targetNumber;
 
-var targetNumber = Math.floor(Math.random() * 100 + 20);
+function setgame(){
 
+counter = 0;
+targetNumber = Math.floor(Math.random() * 102 + 19);
 $("#target").text(targetNumber);
 
-var counter = 0;
+imageCrystal1 = $("#crystal1").attr("data-crystalvalue", Math.floor(Math.random() * 13));
 
-var imageCrystal1 = $("#crystal1").attr("data-crystalvalue", Math.floor(Math.random() * 13));
+imageCrystal2 = $("#crystal2").attr("data-crystalvalue", Math.floor(Math.random() * 13));
 
-var imageCrystal2 = $("#crystal2").attr("data-crystalvalue", Math.floor(Math.random() * 13));
+imageCrystal3 = $("#crystal3").attr("data-crystalvalue", Math.floor(Math.random() * 13));
 
-var imageCrystal3 = $("#crystal3").attr("data-crystalvalue", Math.floor(Math.random() * 13));
-
-var imageCrystal4 = $("#crystal4").attr("data-crystalvalue", Math.floor(Math.random() * 13));
-
-// console.log($('#crystal1').attr("data-crystalvalue"))
+imageCrystal4 = $("#crystal4").attr("data-crystalvalue", Math.floor(Math.random() * 13));
 
 $('#crystal1').append(imageCrystal1);
 $('#crystal2').append(imageCrystal2);
 $('#crystal3').append(imageCrystal3);
 $('#crystal4').append(imageCrystal4);
 
-// console.log($('#crystal1').attr("data-crystalvalue"));
+};
+
+setgame();
 
 $('#crystal1').on("click",function()
 {
@@ -37,14 +43,23 @@ $('#crystal1').on("click",function()
 	console.log("You win!");
 	wins++;
 	$('#wins').text("Wins: " + wins);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
+
 }
 
 else if (counter > targetNumber) {
 	console.log("You lose!");
 	losses++;
 	$('#losses').text("Losses: " + losses);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 });
 
@@ -61,14 +76,22 @@ $('#crystal2').on("click",function()
 	console.log("You win!");
 	wins++;
 	$('#wins').text("Wins: " + wins);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 
 else if (counter > targetNumber) {
 	console.log("You lose!");
 	losses++;
 	$('#losses').text("Losses: " + losses);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 });
 
@@ -85,14 +108,22 @@ $('#crystal3').on("click",function()
 	console.log("You win!");
 	wins++;
 	$('#wins').text("Wins: " + wins);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 
 else if (counter > targetNumber) {
 	console.log("You lose!");
 	losses++;
 	$('#losses').text("Losses: " + losses);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 });
 
@@ -109,17 +140,21 @@ $('#crystal4').on("click",function()
 	console.log("You win!");
 	wins++;
 	$('#wins').text("Wins: " + wins);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 
 else if (counter > targetNumber) {
 	console.log("You lose!");
 	losses++;
 	$('#losses').text("Losses: " + losses);
-	counter = 0;
+	$('#crystal1').removeData();
+	$('#crystal2').removeData();
+	$('#crystal3').removeData();
+	$('#crystal4').removeData();
+	setgame();
 }
 });
-
-
-
-};
